@@ -1,0 +1,41 @@
+{
+  "name": "ffperera/cubo-demo",
+  "description": "Simple demo app for Cubo framework",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/",
+      "FFPerera\\Lib\\": "lib/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Felipe Fernandez Perera",
+      "email": "ffperera@gmail.com"
+    }
+  ],
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^12.1"
+  },
+  "scripts": {
+    "build": [
+      "sass ./dev/scss/style.scss ./root/assets/pub/css/style.css -s compressed"
+    ],
+    "test": [
+      "vendor/bin/phpunit --no-progress --colors=auto tests"
+    ],
+    "server": [
+      "php -S localhost:8000 -t ./root"
+    ],
+    "scan": [
+      "vendor/phpstan/phpstan/phpstan analyse -c phpstan.neon"
+    ]
+  },
+  "require": {
+    "monolog/monolog": "^3.9",
+    "symfony/dotenv": "^7.2",
+    "ffperera/cubo": "^1.0"
+  }
+}

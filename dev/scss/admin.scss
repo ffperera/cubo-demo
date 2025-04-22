@@ -1,0 +1,219 @@
+/* Normalize
+--------------------------------------------- */
+@import "normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "box-sizing";
+
+/*--------------------------------------------------------------
+# responsive
+--------------------------------------------------------------*/
+@import "responsive";
+
+/**
+ *  https://github.com/Rush/Font-Awesome-SVG-PNG/tree/master/white/svg
+ *  https://css-tricks.com/using-svg/
+ */
+
+/*
+<path xmlns="http://www.w3.org/2000/svg" d="M1024 544v448q0 14-9 23t-23 9h-320q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h224v-352q0-14 9-23t23-9h64q14 0 23 9t9 23zm416 352q0-148-73-273t-198-198-273-73-273 73-198 198-73 273 73 273 198 198 273 73 273-73 198-198 73-273zm224 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z" fill="#fff"/>
+*/
+
+body {
+    background-color: #262a41;
+}
+
+body,
+input,
+textarea,
+article {
+    color: #ffffff;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 24px;
+    word-wrap: break-word;
+    -ms-word-wrap: break-word;
+}
+
+a {
+    color: #91e3e1;
+    font-weight: normal;
+
+    &:hover {
+        color: #dc734d;
+    }
+
+    img {
+        border: 0;
+        border-style: none;
+        outline: none;
+    }
+}
+
+.clear {
+    clear: both;
+}
+
+img {
+    border: none;
+}
+
+ul.navegacion {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 0;
+
+    li {
+        display: inline-block;
+        padding: 5px 10px;
+    }
+}
+
+
+
+/* spectre custom */
+.btn {
+
+    color: #2d7199;
+    
+    &.btn-primary {
+        background: #2d7199;
+        border-color: #2d7199;
+        color: #fff; 
+
+        &:focus, &:hover {
+            background: #2d7199;
+            border-color: #2d7199;
+            color: #fff;
+        } 
+
+
+    }
+
+    &.btn-link {
+        color:#2d7199;
+
+        &:focus, &:hover {
+            color:#2d7199;
+        }
+    }
+}
+
+
+.form-input:focus {
+    border-color: #2d7199;
+    box-shadow: 0 0 0 0.1rem rgba(87, 85, 217, 0.2);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-family: Georgia, Times, serif;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 1em;
+}
+
+h1 span {
+    color: #2d7199;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: normal;
+    letter-spacing: -1px;
+    color: #91e3e1;
+}
+h3 {
+    font-size: 24px;
+    line-height: 24px;
+}
+h4 {
+    font-size: 22px;
+    line-height: 32px;
+}
+h5 {
+    font-size: 22px;
+    line-height: 22px;
+}
+h6 {
+    font-size: 22px;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+
+
+
+p.nota {
+    color: #cacaca;
+    font-style: italic;
+    display: block;
+}
+
+
+/*  content menu  */
+#content_menu {
+    ul {
+        list-style-type: none;
+        padding-left: 10px;
+
+        li {
+            a {
+                display: block;
+                width: 269px;
+                padding: 4px 10px;
+                background-color: #eeeeee;
+                margin-bottom: 2px;
+                color: #444444;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: #aaaaaa;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
+footer {
+    margin: 0.2em 0 4em 0;
+    padding: 1em;
+    background-color: #363952;
+    border-radius: 10px;
+
+}
+
+
+@media screen and (max-width: 860px) {
+}
+
+@media screen and (max-width: 650px) {
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+}

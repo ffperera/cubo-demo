@@ -1,0 +1,127 @@
+form {
+
+    display: block;
+    width: 100%;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        color: #333;
+    }
+
+    input:focus,
+    input:hover {
+        border-color: #66afe9;
+        box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+        outline: none;
+    }
+
+    input[type="date"] {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    select {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        color: #333;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 10px;
+    }
+
+    textarea {
+        background-color: #f9f9f9;
+        color: #333;
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+
+    button {
+        background-color: #007bff;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        font-size: inherit;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+
+        &:active {
+            background-color: #004080;
+        }
+    }
+
+    label {
+        display: block;
+        font-size: inherit;
+        // color: #333;
+        margin-bottom: 5px;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+
+        label {
+            display: block;
+            flex: 1;
+            margin-right: 10px;            
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        textarea {
+            flex: 2;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    .error-message {
+        color: #ff4d4d;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+}
