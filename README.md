@@ -188,7 +188,9 @@ This demo uses a very basic database schema, designed solely to test the data la
 
 We are using PDO as the abstraction layer here, but you are free to use more advanced abstractions or even ORM packages if desired (though this might go against the minimalist philosophy of Cubo).
 
-Also, we are using here PHP templates (HTML with PHP code inside), but we could write our own custom Render subclass to integrate a template engine (like [Latte](https://latte.nette.org/en/) o [Smarty](https://www.smarty.net/)).
+Here, we are using PHP templates (HTML with embedded PHP code), but we could also write our own custom Render subclass to integrate a template engine like [Latte](https://latte.nette.org/en/) or [Smarty](https://www.smarty.net/).
+
+To test this integration, we've created a simple wrapper for Latte\Engine called `Lib\LatteRender()`. The `/latte` folder contains templates in Latte format. And the `About` and `Menu` actions set the required data for their corresponding latte templates.
 
 ## License
 
