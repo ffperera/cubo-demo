@@ -17,7 +17,7 @@ Install using Composer:
 composer install ffperera/cubo
 ```
 
-### Demo structure
+## Demo structure
 
 A Cubo-based project can be organized in countless ways. The framework is intentionally project-structure agnostic. You’re free to adopt whatever project layout best suits your needs, and you can use external components, packages, or services as required.
 
@@ -47,10 +47,12 @@ In this demo we use this folder structure:
 │       ├── ... other modules
 │       │
 │       └── layout  (PHP templates)
+│
+├── latte  (latte templates)
 
 ```
 
-### Entry point
+## Entry point
 
 The app entry point is **/root/index.php**
 
@@ -60,13 +62,13 @@ Public resources and assets like images and CSS files should be placed in the **
 
 All other folders reside outside the root directory and cannot be accessed directly from external sources.
 
-### Sections
+## Sections
 
 In this example we are working with a single section: `Pub`
 
 Every section can maintain its own layouts, actions, data layers, etc.
 
-### Actions
+## Actions
 
 An `Action` is a class that performs specific tasks.
 
@@ -79,7 +81,7 @@ So, in Cubo we could...
 - Create middleware actions that execute before primary actions
 - Utilize actions for dependency injection
 
-### Main Controller
+## Main Controller
 
 The `Controller` object acts as Cubo's engine.
 
@@ -102,7 +104,7 @@ The queues are dynamic: from inside an Action we can append new Actions on deman
 
 For example, if a request can not be solved or fails something, we can append fallback actions and abort the actual sequence.
 
-### Routing
+## Routing
 
 In this demo, routes are defined in the `config/routing.php` file as an array.
 
@@ -121,7 +123,7 @@ A route example:
 ],
 ```
 
-### View
+## View
 
 The object View manage the main layout and all the templates needed to format the data sent to the client.
 
@@ -141,7 +143,7 @@ echo $thisView->get('someVar');
 
 ```
 
-### Render
+## Render
 
 The **Render** object is responsible for rendering views and layouts.
 
@@ -161,7 +163,7 @@ $response = $render->render()
 
 ```
 
-### Response
+## Response
 
 The **Response** class allows you to manage HTTP headers, status codes, and redirections.
 
