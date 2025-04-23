@@ -32,5 +32,21 @@ class About extends Action
     $view->set('metatitle', 'About Cubo Demo');
     $view->set('metadesc', 'Cubo Demo is a simple application to demonstrate the use of Cubo framework');
     $view->set('canonical', '/about/');
+
+    // testing latte template engine
+    if ($view->isset('latte')) {
+      $latte = $view->get('latte');
+    } else {
+      $latte = [];
+    }
+
+    $latte = array_merge($latte, [
+      'title' => 'About Cubo Demo',
+      'metadesc' => 'Cubo Demo is a simple application to demonstrate the use of Cubo framework',
+      'canonical' => '/about/',
+    ]);
+
+    $view->set('latte', $latte);
+    $view->set('templatte', 'about.latte');
   }
 }
