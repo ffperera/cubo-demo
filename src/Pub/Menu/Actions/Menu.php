@@ -27,11 +27,7 @@ class Menu extends Action
       ],
       'about' => [
         'label' => 'About',
-        'url' => '/about',
-      ],
-      'contact' => [
-        'label' => 'Contact',
-        'url' => '/contact',
+        'url' => '/about/',
       ],
     ];
 
@@ -55,7 +51,17 @@ class Menu extends Action
     }
 
     $view->set('menu', $menu);
-    
-  }
 
+
+
+    // testing latte template engine
+    if ($view->isset('latte')) {
+      $latte = $view->get('latte');
+    } else {
+      $latte = [];
+    }
+
+    $latte['menu'] = $menu;
+    $view->set('latte', $latte);
+  }
 }

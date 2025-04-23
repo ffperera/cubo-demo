@@ -20,18 +20,19 @@ $logger = new \Monolog\Logger('app');
 $logger->pushHandler(new \Monolog\Handler\StreamHandler("php://stdout", \Monolog\Level::Debug));
 
 
-// TODO: integrate logger everywhere in the code
-
-
 $controller = new Controller($routes, $logger);
-
 
 try {
     $view = $controller->run();
 
-    // TODO: try to move the rendering logic to the Action
     if ($view && $view instanceof \FFPerera\Cubo\View) {
-        $render = new Render($view, $srcDir);
+
+        if ($view->isset('templatte')) {
+            $render = new \FFPerera\Lib\LatteRender($view, dirname($srcDir) . '/latte', true);
+        } else {
+            $render = new Render($view, $srcDir);
+        }
+
         $render->send();
     }
 } catch (Exception $e) {
