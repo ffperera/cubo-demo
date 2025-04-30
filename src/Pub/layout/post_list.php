@@ -1,11 +1,21 @@
 <?php
 
 
-if (isset($thisView) && $thisView->isset('post-list-intro')) {
-    echo '<p>';
-    echo $thisView->get('post-list-intro');
-    echo '</p>' . PHP_EOL;
+if (isset($thisView)) {
+    if ($thisView->isset('post-list-intro')) {
+        echo '<p>';
+        echo $thisView->get('post-list-intro');
+        echo '</p>' . PHP_EOL;
+    }
+
+    if ($thisView->isset('post-id')) {
+        echo '<p>';
+        echo 'ID: ' . $thisView->get('post-id');
+        echo '</p>' . PHP_EOL;
+    }
 }
+
+
 ?>
 
 

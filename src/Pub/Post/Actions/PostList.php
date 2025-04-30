@@ -15,13 +15,12 @@ class PostList extends Action
 
   public function run(Controller $controller): void
   {
-    
+
     // initialize the repository with the PDO connection
     try {
-        $this->repo->init(['PDO' => $controller->get('PDO')]);
-    }
-    catch (\Exception $e) {
-        // TODO: handle the exception
+      $this->repo->init(['PDO' => $controller->get('PDO')]);
+    } catch (\Exception $e) {
+      // TODO: handle the exception
     }
 
     // fetch posts from the repository
@@ -35,13 +34,13 @@ class PostList extends Action
     $view->set('post-list-intro', 'This is the list of posts');
 
 
+    $view->set('post-id', $controller->getRequest()->query('id'));
+
     $view->setLayout('/Pub/layout/main.php');
     $view->setTemplate('main', '/Pub/layout/post_list.php');
-    
+
     $view->set('metatitle', 'List of Posts');
     $view->set('metadesc', 'Published posts');
-    $view->set('canonical', '/blog/');    
-
+    $view->set('canonical', '/blog/');
   }
-
 }

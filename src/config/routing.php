@@ -26,6 +26,12 @@ $routes = [
             'path' =>   '/about/',
             'method' => 'GET',
         ],
+        'blogpost' => [
+            // this is a route with a param (ID, slut...)
+            'action' => new App\Pub\Post\Actions\PostList(new App\Pub\Post\Repository\PostRepositoryPDO()),
+            'path' =>   '/blog/{id}/',
+            'method' => 'GET',
+        ],
         'blog' => [
             'action' => new App\Pub\Post\Actions\PostList(new App\Pub\Post\Repository\PostRepositoryPDO()),
             'path' =>   '/blog/',
