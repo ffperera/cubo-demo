@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "ffperera/cubo",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ffperera/cubo.git",
-                "reference": "7cb741eb1853e19b41be83b21bd7bdb104f390fa"
+                "reference": "643fe6f2fd1eb5c85a5108131c566cc0e77ef047"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ffperera/cubo/zipball/7cb741eb1853e19b41be83b21bd7bdb104f390fa",
-                "reference": "7cb741eb1853e19b41be83b21bd7bdb104f390fa",
+                "url": "https://api.github.com/repos/ffperera/cubo/zipball/643fe6f2fd1eb5c85a5108131c566cc0e77ef047",
+                "reference": "643fe6f2fd1eb5c85a5108131c566cc0e77ef047",
                 "shasum": ""
             },
             "require": {
@@ -48,9 +48,9 @@
             "description": "\"Lightweight PHP framework for web apps\"",
             "support": {
                 "issues": "https://github.com/ffperera/cubo/issues",
-                "source": "https://github.com/ffperera/cubo/tree/v1.2.1"
+                "source": "https://github.com/ffperera/cubo/tree/v1.2.2"
             },
-            "time": "2025-05-04T11:09:38+00:00"
+            "time": "2025-05-04T13:43:51+00:00"
         },
         {
             "name": "latte/latte",

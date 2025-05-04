@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 // front controller / access point
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -16,6 +18,7 @@ $dotenv->load(__DIR__ . '/../.env');
 use FFPerera\Cubo\Controller;
 use FFPerera\Cubo\Render;
 use FFPerera\Cubo\Response;
+
 
 $logger = new \Monolog\Logger('app');
 // $logger->pushHandler(new \Monolog\Handler\StreamHandler(__DIR__ . '/logs/app.log', \Monolog\Level::Debug));
@@ -42,18 +45,25 @@ try {
 
         $render->send();
     }
-} catch (InvalidArgumentException $e) {
+} catch (\FFPerera\Cubo\Exceptions\NotFoundException $e) {
 
-    if (str_contains($e->getMessage(), 'No route found')) {
-        // Handle 404 error
-        (new Response('404 Not Found', [
-            'Content-Type' => 'text/html; charset=utf-8',
-            'X-Powered-By' => 'Cubo',
-            'statusCode' => 404,
-            'statusText' => 'Not Found',
-            'protocolVersion' => '1.1',
-        ]))->send();
-    }
+    // Handle 404 error
+    (new Response('404 Not Found', [
+        'Content-Type' => 'text/html; charset=utf-8',
+        'X-Powered-By' => 'Cubo',
+        'statusCode' => 404,
+        'statusText' => 'Not Found',
+        'protocolVersion' => '1.1',
+    ]))->send();
+} catch (\FFPerera\Cubo\Exceptions\RoutesNotDefinedException $e) {
+    // Handle 404 error
+    (new Response('404 Not Found - Routes not defined', [
+        'Content-Type' => 'text/html; charset=utf-8',
+        'X-Powered-By' => 'Cubo',
+        'statusCode' => 404,
+        'statusText' => 'Routes not defined',
+        'protocolVersion' => '1.1',
+    ]))->send();
 } catch (Exception $e) {
     // TODO: catch every posible exception
 
