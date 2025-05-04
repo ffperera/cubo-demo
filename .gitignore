@@ -1,3 +1,5 @@
 /vendor/
 .env
 /latte/cache/
+.continue/
+/e2e.log
